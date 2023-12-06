@@ -209,7 +209,7 @@ const page = () => {
                                                     <h1 className="text-slate-900 font-semibold">{user?.userName}</h1>
                                                 </div>
                                                 {
-                                                    currentUser?.uid===post?.userId &&  <button onClick={() => deletePost()} className="h-16 w-16"><AiFillDelete /></button>
+                                                    currentUser?.uid===post?.userId &&  <button onClick={() => deletePost()} ><AiFillDelete className="w-6 h-6" /></button>
                                                 }
                                             </div>
 
