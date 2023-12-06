@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
-const firebaseConfig = {
+
 const firebaseConfig = {
   apiKey: "AIzaSyBfiQN4-_iW1B7BU3wU9g-2Hy4LJEXdPZE",
   authDomain: "vblog-219cb.firebaseapp.com",
