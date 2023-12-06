@@ -80,7 +80,7 @@ const CreatePost = ({ setPostModel }) => {
                             <div className="flex max-sm:flex-col gap-1">
                                 <div className=" flex gap-2 justify-center items-center">
                                     {
-                                        tags.length !== 0 && <div className="flex gap-1">
+                                        tags.length !== 0 && <div className="flex gap-1 w-[80%] overflow-x-auto ">
                                             {
                                                 tags.map((tage) => {
                                                     return (<div className="px-1 py-1 flex gap-1 items-center w-full flex-wrap h-auto justify-center">
