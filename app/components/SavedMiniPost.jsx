@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext } from 'react'
+import React, { useContext,useEffect } from 'react'
 import { BlogContext } from '../Context/Context'
 import Image from 'next/image'
 import Link from 'next/link'
