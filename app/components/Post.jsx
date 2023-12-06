@@ -177,8 +177,8 @@ const Post = ({ post }) => {
 
                     <div className='flex max-sm:flex  max-sm:flex-col max-sm:gap-1 max-sm:my-2 text-sm font-medium items-start justify-center gap-3'>
                         <p><span className='font-semibold text-sky-400 uppercase text-[14px]'>Views:</span> {views.length}</p>
-                        <p><span className='font-semibold text-sky-400 uppercase text-[14px]'>Likes: {likedPosts.length}</span></p>
-                        <p><span className='font-semibold text-sky-400 uppercase text-[14px]'>Comments: {commentsPosts.length}</span></p>
+                        <p><span className='font-semibold text-sky-400 uppercase text-[14px]'>Likes:</span> {likedPosts.length}</p>
+                        <p><span className='font-semibold text-sky-400 uppercase text-[14px]'>Comments:</span> {commentsPosts.length}</p>
 
                     </div>
                     <div> <p className=' text-sm flex'><p className='font-semibold'>Created : </p>{date}</p>
