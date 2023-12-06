@@ -22,7 +22,7 @@ const page = () => {
     const router = useRouter()
 
     const [save, setSave] = useState(false)
-    const { users, pop, setPop, currentUser,deleteSavedPosts, blogUser, getCommentsPosts, commentsPosts, getlikesPosts, likedPosts, following, savedPosts, posts } = useContext(BlogContext)
+    const { users, pop, setPop, currentUser,blogUser, getCommentsPosts, commentsPosts, getlikesPosts, likedPosts, following, savedPosts, posts } = useContext(BlogContext)
     const [loader, setLoader] = useState(true)
     const [liked, setLiked] = useState(false)
     const FollowingUsers = following
@@ -53,7 +53,7 @@ const page = () => {
     }
     const deletePost = async () => {
         await deleteDoc(doc(db, 'posts', post?.id))
-        deleteSavedPosts(post?.id)
+    
         router.push('/')
     }
     const deleteSavedPost = async () => {
@@ -210,7 +210,12 @@ const page = () => {
                                                     <h1 className="text-slate-900 font-semibold">{user?.userName}</h1>
                                                 </div>
                                                 {
-                                                    currentUser?.uid===post?.userId &&  <button onClick={() => deletePost()} ><AiFillDelete className="w-6 h-6" /></button>
+                                                    currentUser?.uid===post?.userId &&  <button onClick={() =>{
+                                                        if(save){
+                                                            deleteSavedPost()
+                                                        }
+                                                         deletePost()
+                                                    }} ><AiFillDelete className="w-6 h-6" /></button>
                                                 }
                                             </div>
 
