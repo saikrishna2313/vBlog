@@ -224,7 +224,7 @@ const page = () => {
                                         <div className="w-full px-1  py-1">
                                             <p className="text-sm ml-1 font-semibold">{date && date}</p>
                                             {
-                                                post?.postImage && <Image className='w-[300px] h-[200px] max-sm:w-full  mt-5 max-sm:h-[100px] rounded-lg object-cover' src={post?.postImage} width={200} height={200} />
+                                                post?.postImage && <Image className='w-[300px] h-[200px] max-sm:w-[300px]  mt-5 max-sm:h-[300px] rounded-lg object-cover' src={post?.postImage} width={200} height={200} />
                                             }
                                             <p className="text-lg max-sm:text-sm font-medium">{post?.postDesc}</p>
                                         </div>
