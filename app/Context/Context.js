@@ -49,6 +49,9 @@ const Context = ({ children }) => {
 
 
     }
+    const deleteSavedPosts = async (id) => {
+        await deleteDoc(doc(db, 'users', `${currentUser?.uid}`, id))
+    }
     const getlikesPosts = async (id) => {
         const likesDoc = doc(db, 'posts', `${id}`)
         const likes = collection(likesDoc, 'likes')
@@ -100,7 +103,7 @@ const Context = ({ children }) => {
     }, [currentUser])
 
     return (
-        <BlogContext.Provider value={{ posts, pop, setPop, getCommentsPosts, commentsPosts, likedPosts, getlikesPosts, following, blogUser, savedPosts, users, currentUser, setCurrentUser, loading, setLoading }}>
+        <BlogContext.Provider value={{ posts, pop, setPop,deleteSavedPosts, getCommentsPosts, commentsPosts, likedPosts, getlikesPosts, following, blogUser, savedPosts, users, currentUser, setCurrentUser, loading, setLoading }}>
             {
                 Loading ? <section className="h-screen w-full flex items-center justify-center">
                     <Image src={loading} width={600} height={600} />
