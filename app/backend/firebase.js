@@ -3,15 +3,16 @@ import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
-
 const firebaseConfig = {
-  apiKey: "AIzaSyBfiQN4-_iW1B7BU3wU9g-2Hy4LJEXdPZE",
-  authDomain: "vblog-219cb.firebaseapp.com",
-  projectId: "vblog-219cb",
-  storageBucket: "vblog-219cb.appspot.com",
-  messagingSenderId: "645470996131",
-  appId: "1:645470996131:web:ee319e7581d7a88faba116"
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_STORAGE_ID,
+    messagingSenderId: process.env.NEXT_PUBLIC_MESSAGE_NUMBER,
+    appId: process.env.NEXT_PUBLIC_APP_ID
 };
+
+
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth()
