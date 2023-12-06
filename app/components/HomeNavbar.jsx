@@ -89,7 +89,7 @@ const HomeNavbar = () => {
                                 }
                                 <div onClick={() => setuserModel(!userModel)}>
                                     <div className='flex cursor-pointer justify-end items-center gap-1'>
-                                        <Image alt='djsds' src={user?.userImage ? user.userImage : profileLogo} width={40} height={40} className='h-8 border-2 border-slate-600 w-8 rounded-full' />
+                                        <Image alt='djsds' src={user?.userImage ? user.userImage : profileLogo} width={40} height={40} className='h-8 border-2 object-cover border-slate-600 w-8 rounded-full' />
                                         <FaAngleDoubleDown className={`h-4  w-4 ${userModel ? "rotate-180" : "rotate-0"}`} />
                                     </div>
                                 </div>
@@ -97,10 +97,10 @@ const HomeNavbar = () => {
                             {
                                 userModel && < div className='w-[200px] max-sm:w-[170px] gap-4 z-[1000] flex flex-col justify-center items-center absolute top-16 mt-1 right-5 h-auto px-3 py-5 bg-slate-100 shadow-xl  rounded-md'>
 
-                                    <Link onClick={() => setuserModel(!userModel)} href={`/profile/${currentUser?.uid}`} className='flex gap-2 w-full h-auto px-1 py-2 bg-slate-300 rounded-lg text-sm max-sm:text-sm font-semibold uppercase items-center justify-center flex-row-reverse'>
+                                    <a onClick={() => setuserModel(!userModel)} href={`/profile/${currentUser?.uid}`} className='flex gap-2 w-full h-auto px-1 py-2 bg-slate-300 rounded-lg text-sm max-sm:text-sm font-semibold uppercase items-center justify-center flex-row-reverse'>
                                         <h1>Profile</h1>
                                         <CgProfile className='h-6 w-6 max-sm:w-4 max-sm:h-4' />
-                                    </Link>
+                                    </a>
                                     <div onClick={() => {
                                         setuserModel(!userModel)
                                         setPostModel(!postModel)
