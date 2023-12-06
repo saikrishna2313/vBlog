@@ -63,7 +63,7 @@ const CreatePost = ({ setPostModel }) => {
 
     }
     return (
-        <section className='h-screen inset-1 absolute top-0 left-0 z-[1000] flex flex-col items-center justify-center  max-sm:flex-col w-screen bg-black bg-opacity-20 backdrop-blur-sm'>
+        <section className='h-screen inset-1 absolute top-0 left-0 z-[300000] flex flex-col items-center justify-center  max-sm:flex-col w-screen bg-black bg-opacity-20 backdrop-blur-sm'>
 
             <section className='w-[90%] overflow-auto py-10  relative bg-opacity-[99%] h-[90%] max-sm:flex-col  max-sm:flex flex bg-white' >
                 <h1 className="w-full text-center absolute top-0 left-0 bg-black text-white font-semibold px-3 py-2 uppercase">Create Post</h1>
