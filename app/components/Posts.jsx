@@ -31,7 +31,7 @@ const Posts = ({ loading, tagFilter }) => {
     })
 
 useEffect(()=>{
-    location.reload()
+  
 },[])
     return (
         <section className='relative w-full'>
