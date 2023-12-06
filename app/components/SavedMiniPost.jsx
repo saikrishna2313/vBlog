@@ -7,9 +7,11 @@ import { useRouter } from 'next/navigation'
 import noimage from '../assets/noimage.png'
 const SavedMiniPost = ({ post }) => {
     const router = useRouter()
-    const { posts } = useContext(BlogContext)
+    const { posts ,getAllPosts} = useContext(BlogContext)
     const [SavedPost] = posts.filter((p) => (p.id === post?.userId))
-
+  useEffect(()=>{
+        getAllPosts()
+    },[])
     return (
         <section onClick={() => router.push(`/postDetails/${SavedPost?.id}`)} className='flex px-5 py-4 w-full shadow-md rounded-sm gap-3 justify-start  cursor-pointer items-center'>
             {
