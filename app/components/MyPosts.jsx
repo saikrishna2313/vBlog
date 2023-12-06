@@ -1,6 +1,6 @@
 'use client'
 
-import { useContext } from "react"
+import { useContext,useEffect } from "react"
 import { BlogContext } from "../Context/Context"
 import Image from 'next/image'
 import { useRouter } from "next/navigation"
