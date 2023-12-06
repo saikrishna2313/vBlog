@@ -13,7 +13,7 @@ const SavedPost = () => {
                 savedPosts.map((post) => {
 
                     return (
-                        <div className='flex flex-col w-[100%] max-sm:w-[80%] items-center justify-center gap-3'>
+                        <div className='flex flex-col w-[100%] max-sm:w-[100%] items-center justify-center gap-3'>
                             <SavedMiniPost post={post} />
 
                         </div>
