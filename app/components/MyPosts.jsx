@@ -8,9 +8,13 @@ import noimage from '../assets/noimage.png'
 
 
 const MyPosts = () => {
-    const { posts, currentUser } = useContext(BlogContext)
+    const { posts,getAllPosts, currentUser } = useContext(BlogContext)
+    
     const router = useRouter()
     const FilteredPosts = posts.filter((post) => (post.userId === currentUser?.uid))
+    useEffect(()=>{
+        getAllPosts()
+    },[])
     return (
         <section className="w-full max-sm:w-[80%]  h-auto">
             {
