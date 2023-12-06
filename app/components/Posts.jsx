@@ -30,7 +30,9 @@ const Posts = ({ loading, tagFilter }) => {
         return self.indexOf(value) === index;
     })
 
-
+useEffect(()=>{
+    location.reload()
+},[])
     return (
         <section className='relative w-full'>
             <div onClick={() => setPop(!pop)} className='w-full mt-5 flex items-center gap-2 px-3 py-1 text-white bg-black h-auto sm:hidden justify-center m-1'><button className='uppercase text-sm'>Availble Tags</button><CiFilter className='h-6 w-6' /></div>
