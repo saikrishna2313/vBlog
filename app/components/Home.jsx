@@ -74,7 +74,7 @@ const Home = () => {
                     <p className='text-sm m-3 text-slate-800 max-sm:hidden'>Welcome to vBlog, your premier knowledge-sharing platform where curiosity meets insight. Our mission is to foster a community where passionate individuals can come together to share and gain knowledge on a wide array of topics. Whether you’re looking to dive deep into the latest tech trends, explore the mysteries of the cosmos, or uncover the secrets of history, vBlog is your gateway to understanding the world around us.</p>
                     <p className='text-sm m-3 text-slate-800'>Join us at vBlog, where every article is a journey, every discussion is an adventure, and every user is a valuable member of our knowledge-sharing oasis. Start exploring today and become part of a community that values wisdom, curiosity, and the power of shared learning. 🌐📚✨</p>
                     <p ><span className='text-xl font-semibold max-sm:text-sm'>Discover. Share. Grow.</span></p>
-                    <p className='text-sm text-red-400'>Kindly read <span className=' shadow-xl border-b-2 border-blue-400 text-blue-400 cursor-pointer' onClick={() => router.push('/homeAbout')}>About</span> Section once</p>
+                    <p className='text-sm text-red-400'>Kindly read <span className=' text-black uppercase cursor-pointer' onClick={() => router.push('/homeAbout')}>About</span> Section once</p>
                 </section>
 
 
