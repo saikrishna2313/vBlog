@@ -206,7 +206,7 @@ const Post = ({ post }) => {
                     </div>
                 </div>
                 {
-                    post?.postImage && <Image className='w-[300px] h-[200px] max-sm:w-full  mt-5 max-sm:h-[100px] rounded-lg object-cover' src={post?.postImage} width={200} height={200} />
+                    post?.postImage && <Image className='w-[300px] h-[200px] max-sm:w-[300px]  mt-5 max-sm:h-[300px] rounded-lg object-cover' src={post?.postImage} width={200} height={200} />
                 }
             </section>
 
