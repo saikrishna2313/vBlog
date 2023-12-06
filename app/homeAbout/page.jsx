@@ -30,7 +30,7 @@ const About = () => {
                         <p className='text-gray-600'>The Future updates includes Group Chat, mobile version etc!</p>
                         <p className='text-gray-600'>The Webiste is Fullstack App developed by <button onClick={() => {
                             if (currentUser?.uid) {
-                                router.push('profile/evCegXgs3bNn95iqpkAWn7nfNgE2')
+                                router.push('profile/vIasQCCraZM6PvPfypbD1d8qWcC2')
                             } else {
                                 setPop(!pop)
                             }
