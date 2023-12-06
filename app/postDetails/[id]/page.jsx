@@ -51,6 +51,10 @@ const page = () => {
 
         toast.success("Post Saved Successfully")
     }
+    const deletePost = async () => {
+        await deleteDoc(doc(db, 'posts', post?.id))
+        router.push('/')
+    }
     const deleteSavedPost = async () => {
         await deleteDoc(doc(db, "users", currentUser?.uid, "saved", post?.id))
 
@@ -199,10 +203,12 @@ const page = () => {
                                             post?.tags.map((tag) => (<p>#{tag.tagName}</p>))
                                         }</div>
                                         <div className="flex justify-between w-full items-center gap-1 my-3">
-                                            <div className="flex items-center justify-center gap-1">
-                                                <button onClick={() => router.push(`/profile/${user?.userId}`)}> <Image src={user?.userImage ? user.userImage : profileLogo} width={40} height={40} className="w-[40px] object-cover mr-4 h-[40px] rounded-full" /></button>
-                                                <h1 className="text-slate-900 font-semibold">{user?.userName}</h1>
-
+                                            <div className="flex items-center justify-between px-2 gap-1">
+                                                <div>
+                                                    <button onClick={() => router.push(`/profile/${user?.userId}`)}> <Image src={user?.userImage ? user.userImage : profileLogo} width={40} height={40} className="w-[40px] object-cover mr-4 h-[40px] rounded-full" /></button>
+                                                    <h1 className="text-slate-900 font-semibold">{user?.userName}</h1>
+                                                </div>
+                                                <button onClick={() => deletePost()} className="h-8 w-8"><AiFillDelete /></button>
                                             </div>
 
                                             <div>
@@ -280,7 +286,7 @@ const page = () => {
                                                             return (
                                                                 <section className="w-full flex-col flex gap-1 bg-white">
                                                                     <div className="flex justify-start gap-2 items-center">
-                                                                        <button onClick={() => router.push(`/profile/${comment?.userId}`)}> <Image src={user?.userImage? user.userImage:profileLogo} width={30} height={30} className="h-8 w-8" /></button>
+                                                                        <button onClick={() => router.push(`/profile/${comment?.userId}`)}> <Image src={user?.userImage ? user.userImage : profileLogo} width={30} height={30} className="h-8 w-8" /></button>
                                                                         <p className="text-slate-800 font-semibold capitalize">{user?.userName}</p>
                                                                     </div>
                                                                     <p className=" flex border justify-between items-center px-4 shadow-lg w-full py-2 bg-slate-100 text-lg  max-sm:text-sm "><span>{comment.comment}</span>
@@ -310,7 +316,7 @@ const page = () => {
                     }
                 </section> :
                     <section className="h-screen flex items-center justify-center bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 w-full">
-                      
+
 
                     </section>
             }
