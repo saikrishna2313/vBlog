@@ -354,9 +354,7 @@ const page = () => {
                     }
 
                 </section > : <section className="h-screen flex items-center justify-center bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 w-full">
-                    <div onClick={() => setPop(!pop)}>
-                        <h1 className="text-xl font-semibold cursor-pointer px-4 py-1 text-white bg-blue-400 uppercase rounded-full ">Please Login to Continue</h1>
-                    </div>
+                  
 
                 </section>
             }</section>
