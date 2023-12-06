@@ -32,7 +32,7 @@ const HomeNavbar = () => {
                 <a href="/"> <Image src={logo} className='w-[150px] h-[150px] max-sm:left-0 top-[50%] translate-y-[-50%] left-4 absolute' /></a>
             </div>
             {
-                currentUser?.uid && <div className={`sm:flex  ${searchModel ? 'max-sm:absolute max-sm:z-[1000]]  max-sm:top-16 max-sm:left-0 max-sm:mt-[2px]  max-sm:w-full  max-sm:h-screen inset-0 max-sm:bg-white max-sm:bg-opacity-20  max-sm:backdrop-blur-sm' : 'hidden'} `}>
+                currentUser?.uid && <div className={`sm:flex  ${searchModel ? 'max-sm:absolute max-sm:z-[100000]]  max-sm:top-16 max-sm:left-0 max-sm:mt-[2px]  max-sm:w-full  max-sm:h-screen inset-0 max-sm:bg-white max-sm:bg-opacity-20  max-sm:backdrop-blur-sm' : 'hidden'} `}>
                     <Search searchModel={searchModel} setSearchModel={setSearchModel} />
                 </div>
             }
