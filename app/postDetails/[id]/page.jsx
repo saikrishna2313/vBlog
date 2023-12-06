@@ -203,12 +203,14 @@ const page = () => {
                                             post?.tags.map((tag) => (<p>#{tag.tagName}</p>))
                                         }</div>
                                         <div className="flex justify-between w-full items-center gap-1 my-3">
-                                            <div className="flex items-center justify-between px-2 gap-1">
-                                                <div>
+                                            <div className="flex items-center justify-between w-full px-2 gap-1">
+                                                <div className="flex items-center justify-center px-2 gap-1">
                                                     <button onClick={() => router.push(`/profile/${user?.userId}`)}> <Image src={user?.userImage ? user.userImage : profileLogo} width={40} height={40} className="w-[40px] object-cover mr-4 h-[40px] rounded-full" /></button>
                                                     <h1 className="text-slate-900 font-semibold">{user?.userName}</h1>
                                                 </div>
-                                                <button onClick={() => deletePost()} className="h-8 w-8"><AiFillDelete /></button>
+                                                {
+                                                    currentUser?.uid===post?.userId &&  <button onClick={() => deletePost()} className="h-16 w-16"><AiFillDelete /></button>
+                                                }
                                             </div>
 
                                             <div>
