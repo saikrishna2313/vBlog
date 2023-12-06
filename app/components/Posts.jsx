@@ -4,10 +4,12 @@ import { BlogContext } from '../Context/Context'
 import Post from './Post'
 import Loader from './Loader'
 import { CiFilter } from "react-icons/ci";
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../backend/firebase'
 import { MdCancel } from "react-icons/md";
 const Posts = ({ loading, tagFilter }) => {
-    const { posts, users, currentUser, } = useContext(BlogContext)
-
+    const { users, currentUser, } = useContext(BlogContext)
+    const [posts,setPosts]=useState([])
     const [pop, setPop] = useState(false)
     const [filter, setFilter] = useState('all')
     const [all, setAll] = useState(true)
@@ -29,9 +31,14 @@ const Posts = ({ loading, tagFilter }) => {
     const finalTags = tags.filter((value, index, self) => {
         return self.indexOf(value) === index;
     })
+ const getAllPosts = async () => {
+        const posts = await getDocs(collection(db, "posts"))
+        const postsData = posts.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        setPosts(postsData)
 
+    }
 useEffect(()=>{
-  
+  getAllPosts()
 },[])
     return (
         <section className='relative w-full'>
