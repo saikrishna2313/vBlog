@@ -10,7 +10,7 @@ const Search = ({ searchModel, setSearchModel }) => {
     const [Filter, setFilter] = useState('')
     const router = useRouter()
     return (
-        <section className='flex relative z-[20000] items-center  justify-center gap-3'>
+        <section className='flex relative z-[100000] items-center  justify-center gap-3'>
             <input value={Filter} onChange={(e) => setFilter(e.target.value)} className='w-[300px] px-3 pr-12 py-2 text-slate-800 bg-slate-50 outline-none text-lg max-sm:text-sm' type='text' placeholder='Search Users' />
             <FaSearchengin className='h-8 max-sm:hidden  absolute top-[50%] translate-y-[-50%] right-3 text-slate-500 w-8' />
 
