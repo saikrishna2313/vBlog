@@ -3,6 +3,7 @@
 import { useContext } from "react"
 import { BlogContext } from "../Context/Context"
 import { useRouter } from "next/navigation"
+import { AiFillDelete } from "react-icons/ai";
 import Image from 'next/image'
 const Comment = ({ commentt, deleteComment,currentUserId }) => {
     const { users } = useContext(BlogContext)
