@@ -9,7 +9,7 @@ import { auth, db } from "../backend/firebase"
 import { collection, doc, getDocs } from "firebase/firestore"
 const MyPosts = () => {
     const {currentUser } = useContext(BlogContext)
-    cosnt [posts,setPosts]=useState([])
+    const [posts,setPosts]=useState([])
     const router = useRouter()
     const FilteredPosts = posts.filter((post) => (post.userId === currentUser?.uid))
      const getAllPosts = async () => {
