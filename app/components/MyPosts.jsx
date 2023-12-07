@@ -7,21 +7,25 @@ import { useRouter } from "next/navigation"
 import noimage from '../assets/noimage.png'
 
 import { collection, doc, getDocs } from "firebase/firestore"
-const MyPosts = () => {
-    const {currentUser,posts,userPosts,getBlogUserPosts, setUserPosts} = useContext(BlogContext)
-   
+const MyPosts = ({id}) => {
+    const {currentUser,posts} = useContext(BlogContext)
+   const [myPosts,setMyPosts]=useState([])
     const router = useRouter()
-    // const FilteredPosts = posts.filter((post) => (post.userId === currentUser?.uid))
+    const getMyPosts=async()=>{
+        const FilteredPosts = posts.filter((post) => (post.userId === id))
+        setMyPosts(FilteredPosts)
+    }
+ 
    useEffect(()=>{
-       getBlogUserPosts()
+       getMyPosts()
    },[])
   
     return (
         <section className="w-full max-sm:w-[80%]  h-auto">
             {
-                userPosts.length === 0 ? <section className="w-full items-center justify-center py-5"><h1 className="text-lg text-center font-semibold uppercase">No Posts Yet</h1></section> : <section>
+                myPosts.length === 0 ? <section className="w-full items-center justify-center py-5"><h1 className="text-lg text-center font-semibold uppercase">No Posts Yet</h1></section> : <section>
                     {
-                        userPosts.map((post) => {
+                        myPosts.map((post) => {
                             return (
                                 <section onClick={() => router.push(`/postDetails/${post.id}`)} className='flex px-5 py-4 w-[100%] shadow-md rounded-sm gap-2 justify-start cursor-pointer items-center'>
                                     {
