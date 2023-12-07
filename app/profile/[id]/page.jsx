@@ -331,7 +331,7 @@ const page = () => {
                                     </div>
                                     <div className='w-full flex justify-center items-center'>
                                         {
-                                            userInfo === 0 && <MyPosts />
+                                            userInfo === 0 && <MyPosts id={id} />
 
                                         }
                                         {
