@@ -19,6 +19,7 @@ const Context = ({ children }) => {
     const [commentsPosts, setCommentsPosts] = useState([])
     const [pop, setPop] = useState(false)
     const [tags, setTags] = useState([])
+    const [userPosts, setUserPosts] = useState([])
     const getTags = () => {
         posts.map((post) => setTags([...tags, post.tags]))
 
@@ -39,6 +40,10 @@ const Context = ({ children }) => {
         const postsData = posts.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
         setPosts(postsData)
 
+    }
+     const getBlogUserPosts = () => {
+        const filteredPosts = posts.filter((post) => post?.userId === currentUser?.uid)
+        setUserPosts(filteredPosts)
     }
     const getSavedPosts = async () => {
         const savedDoc = doc(db, 'users', `${currentUser?.uid}`)
@@ -62,6 +67,7 @@ const Context = ({ children }) => {
 
 
     }
+    const getBlougUserPosts=async()=>{}
     const getCommentsPosts = async (id) => {
         const commentsDoc = doc(db, 'posts', `${id}`)
         const comments = collection(commentsDoc, 'comments')
@@ -96,6 +102,7 @@ const Context = ({ children }) => {
         getUsers()
         presentUser()
         getAllPosts()
+        getBlogUserPosts()
         getTags()
         getSavedPosts()
         getFollowing()
@@ -103,7 +110,7 @@ const Context = ({ children }) => {
     }, [currentUser])
 
     return (
-        <BlogContext.Provider value={{ posts, pop, setPop,deleteSavedPosts, getCommentsPosts, commentsPosts, likedPosts, getlikesPosts, following, blogUser, savedPosts, users, currentUser, setCurrentUser, loading, setLoading,getAllPosts }}>
+        <BlogContext.Provider value={{ posts, pop, setPop,deleteSavedPosts, userPosts, setUserPosts,getCommentsPosts, commentsPosts, likedPosts, getlikesPosts, following, blogUser, savedPosts, users, currentUser, setCurrentUser, loading, setLoading,getAllPosts }}>
             {
                 Loading ? <section className="h-screen w-full flex items-center justify-center">
                     <Image src={loading} width={600} height={600} />
