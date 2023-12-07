@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { BlogContext } from "./app/Context/Context"
 import { useRouter } from "next/navigation"
 
-const comment = ({ comment, deleteComment }) => {
+const Comment = ({ Comment, deleteComment }) => {
     const { users } = useContext(BlogContext)
     const [commentUser] = users.filter((user) => user?.userId === comment?.userId)
     const router = useRouter()
@@ -29,4 +29,4 @@ const comment = ({ comment, deleteComment }) => {
     )
 }
 
-export default comment
+export default Comment
