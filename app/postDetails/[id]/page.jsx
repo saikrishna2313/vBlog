@@ -291,9 +291,9 @@ const page = () => {
                                                 </div>
                                                 <div className="w-full flex flex-col items-start justify-center ">
                                                    {
-                                                        commentsPosts.map((comment) => {
+                                                        commentsPosts.map((commentt) => {
                                                             return (
-                                                                <Comment comment={comment} deleteComment={deleteComment} />
+                                                                <Comment commentt={commentt} deleteComment={deleteComment} />
                                                             )
                                                         })
                                                     }
