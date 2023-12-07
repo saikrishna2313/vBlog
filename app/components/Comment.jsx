@@ -3,7 +3,7 @@
 import { useContext } from "react"
 import { BlogContext } from "../Context/Context"
 import { useRouter } from "next/navigation"
-
+import Image from 'next/image'
 const Comment = ({ commentt, deleteComment,currentUserId }) => {
     const { users } = useContext(BlogContext)
     const [commentUser] = users.filter((user) => user?.userId === commentt?.userId)
