@@ -289,24 +289,10 @@ const page = () => {
                                                     }} className="w-[30%] px-2 py-3 text-lg max-sm:text-sm  text-slate-100 bg-green-400 uppercase outline-none mb-2 ">post</button>
                                                 </div>
                                                 <div className="w-full flex flex-col items-start justify-center ">
-                                                    {
+                                                   {
                                                         commentsPosts.map((comment) => {
                                                             return (
-                                                                <section className="w-full flex-col flex gap-1 bg-white">
-                                                                    <div className="flex justify-start gap-2 items-center">
-                                                                        <button onClick={() => router.push(`/profile/${comment?.userId}`)}> <Image src={user?.userImage ? user.userImage : profileLogo} width={30} height={30} className="h-8 object-cover rounded-full w-8" /></button>
-                                                                        <p className="text-slate-800 font-semibold capitalize">{user?.userName}</p>
-                                                                    </div>
-                                                                    <p className=" flex border justify-between items-center px-4 shadow-lg w-full py-2 bg-slate-100 text-lg  max-sm:text-sm "><span>{comment.comment}</span>
-                                                                        {
-                                                                            currentUserId === comment.userId && <button onClick={() => {
-                                                                                deleteComment(comment.comment)
-
-
-                                                                            }}><AiFillDelete className="w-6 h-6" /></button>
-                                                                        }
-                                                                    </p>
-                                                                </section>
+                                                                <comment comment={comment} deleteComment={deleteComment} />
                                                             )
                                                         })
                                                     }
