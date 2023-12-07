@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from "react"
-import { BlogContext } from "./app/Context/Context"
+import { BlogContext } from "../Context/Context"
 import { useRouter } from "next/navigation"
 
 const Comment = ({ comment, deleteComment }) => {
