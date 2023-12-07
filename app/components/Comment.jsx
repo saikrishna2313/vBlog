@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { BlogContext } from "../Context/Context"
 import { useRouter } from "next/navigation"
 
-const Comment = ({ commentt, deleteComment }) => {
+const Comment = ({ commentt, deleteComment,currentUserId }) => {
     const { users } = useContext(BlogContext)
     const [commentUser] = users.filter((user) => user?.userId === commentt?.userId)
     const router = useRouter()
@@ -17,7 +17,7 @@ const Comment = ({ commentt, deleteComment }) => {
             </div>
             <p className=" flex border justify-between items-center px-4 shadow-lg w-full py-2 bg-slate-100 text-lg  max-sm:text-sm "><span>{commentt.comment}</span>
                 {
-                    currentUserId === comment.userId && <button onClick={() => {
+                    currentUserId === commentt.userId && <button onClick={() => {
                         deleteComment(commentt.comment)
 
 
