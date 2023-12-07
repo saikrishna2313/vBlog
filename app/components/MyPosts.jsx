@@ -5,22 +5,15 @@ import { BlogContext } from "../Context/Context"
 import Image from 'next/image'
 import { useRouter } from "next/navigation"
 import noimage from '../assets/noimage.png'
-import { auth, db } from "../backend/firebase"
+
 import { collection, doc, getDocs } from "firebase/firestore"
 const MyPosts = () => {
     const {currentUser } = useContext(BlogContext)
-    const [posts,setPosts]=useState([])
+   
     const router = useRouter()
     const FilteredPosts = posts.filter((post) => (post.userId === currentUser?.uid))
-     const getAllPosts = async () => {
-        const posts = await getDocs(collection(db, "posts"))
-        const postsData = posts.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        setPosts(postsData)
-
-    }
-    useEffect(()=>{
-        getAllPosts()
-    },[])
+   
+   
     return (
         <section className="w-full max-sm:w-[80%]  h-auto">
             {
