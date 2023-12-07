@@ -11,7 +11,7 @@ const Comment = ({ commentt, deleteComment,currentUserId }) => {
     const router = useRouter()
     return (
 
-        <section className="w-full flex-col mb-1 flex gap-1 bg-white">
+        <section className="w-full flex-col m-2 flex gap-1 bg-white">
             <div className="flex justify-start gap-2 items-center">
                 <button onClick={() => router.push(`/profile/${commentt?.userId}`)}> <Image src={commentUser?.userImage ? commentUser.userImage : profileLogo} width={30} height={30} className="h-8 rounded-full w-8" /></button>
                 <p className="text-slate-800 font-semibold capitalize">{commentUser?.userName}</p>
