@@ -8,14 +8,12 @@ import noimage from '../assets/noimage.png'
 
 import { collection, doc, getDocs } from "firebase/firestore"
 const MyPosts = () => {
-    const {currentUser,posts,getAllPosts } = useContext(BlogContext)
+    const {currentUser,posts} = useContext(BlogContext)
    
     const router = useRouter()
     const FilteredPosts = posts.filter((post) => (post.userId === currentUser?.uid))
    
-   useEffect(()=>{
-       getAllPosts()
-   },[])
+  
     return (
         <section className="w-full max-sm:w-[80%]  h-auto">
             {
