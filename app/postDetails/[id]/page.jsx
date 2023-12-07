@@ -242,7 +242,7 @@ const page = () => {
                                             {
                                                 post?.postImage && <Image className='w-full h-[300px] max-sm:w-full  mt-5 max-sm:h-[300px] rounded-lg object-cover' src={post?.postImage} width={200} height={200} />
                                             }
-                                            <p className="text-lg max-sm:text-sm font-medium">{post?.postDesc}</p>
+                                            <p className="text-lg my-2 max-sm:text-sm font-medium">{post?.postDesc}</p>
                                         </div>
                                         <div className="flex relative  justify-between w-full items-center border-2 px-3 py-2">
                                             <div className="flex  justify-center items-center gap-4">
