@@ -8,18 +8,20 @@ import noimage from '../assets/noimage.png'
 
 import { collection, doc, getDocs } from "firebase/firestore"
 const MyPosts = () => {
-    const {currentUser,posts} = useContext(BlogContext)
+    const {currentUser,posts,userPosts,getBlogUserPosts, setUserPosts} = useContext(BlogContext)
    
     const router = useRouter()
-    const FilteredPosts = posts.filter((post) => (post.userId === currentUser?.uid))
-   
+    // const FilteredPosts = posts.filter((post) => (post.userId === currentUser?.uid))
+   useEffect(()=>{
+       getBlogUserPosts()
+   },[])
   
     return (
         <section className="w-full max-sm:w-[80%]  h-auto">
             {
-                FilteredPosts.length === 0 ? <section className="w-full items-center justify-center py-5"><h1 className="text-lg text-center font-semibold uppercase">No Posts Yet</h1></section> : <section>
+                userPosts.length === 0 ? <section className="w-full items-center justify-center py-5"><h1 className="text-lg text-center font-semibold uppercase">No Posts Yet</h1></section> : <section>
                     {
-                        FilteredPosts.map((post) => {
+                        userPosts.map((post) => {
                             return (
                                 <section onClick={() => router.push(`/postDetails/${post.id}`)} className='flex px-5 py-4 w-[100%] shadow-md rounded-sm gap-2 justify-start cursor-pointer items-center'>
                                     {
