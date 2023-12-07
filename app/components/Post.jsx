@@ -164,7 +164,7 @@ const Post = ({ post }) => {
             <section className='flex  flex-col-reverse mt-2 gap-4'>
                 <div className='flex w-[80%] gap-1 mt-2 flex-col items-start'>
                     <h1 className='text-xl font-semibold'>{post.postTitle}</h1>
-                    <h1>{post.postDesc.slice(0, 20)}...<button onClick={() => {
+                    <h1>{post.postDesc.slice(0, 40)}...<button onClick={() => {
                         if (currentUser?.uid) {
                             view()
                         }
