@@ -21,7 +21,7 @@ import profileLogo from '../../assets/profileLogo.png'
 import Comment from "@/app/components/Comment"
 const page = () => {
     const router = useRouter()
-
+    const [comment, setComment] = useState(false)
     const [save, setSave] = useState(false)
     const { users, pop, setPop, currentUser,blogUser, getCommentsPosts, commentsPosts, getlikesPosts, likedPosts, following, savedPosts, posts } = useContext(BlogContext)
     const [loader, setLoader] = useState(true)
@@ -29,6 +29,7 @@ const page = () => {
     const FollowingUsers = following
     const [commentText, setCommentText] = useState('')
     const id = useParams()
+    
     const [presentUser] = users?.filter((user) => user.userId === currentUser?.uid)
     const currentUserId = currentUser?.uid
     const post = posts.find((post) => (post.id === id.id))
@@ -41,7 +42,7 @@ const page = () => {
     date = dd + '/' + mm + '/' + yyyy;
 
     const [isFollwed, setisFollowed] = useState(true)
-    const [comment, setComment] = useState(false)
+
 
     const [check, setCheck] = useState(true)
 
@@ -261,7 +262,8 @@ const page = () => {
                                                     <p>{likedPosts.length}</p>
                                                 </div>
 
-                                                <button onClick={() => setComment(!comment)}><FaCommentDots className="h-6 w-6" /></button></div>
+                                                <button onClick={() => setComment(!comment)}><FaCommentDots className="h-6 w-6" /></button>
+                                            </div>
 
                                             <div>
 
