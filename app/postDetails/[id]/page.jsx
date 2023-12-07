@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 import { IoGameController } from "react-icons/io5";
 import noimage from '../../assets/noimage.png'
 import profileLogo from '../../assets/profileLogo.png'
-import comment from "@/app/components/comment";
+import Comment from "@/app/components/Comment"
 const page = () => {
     const router = useRouter()
 
@@ -293,7 +293,7 @@ const page = () => {
                                                    {
                                                         commentsPosts.map((comment) => {
                                                             return (
-                                                                <comment comment={comment} deleteComment={deleteComment} />
+                                                                <Comment comment={comment} deleteComment={deleteComment} />
                                                             )
                                                         })
                                                     }
