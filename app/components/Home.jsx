@@ -69,6 +69,7 @@ const Home = () => {
 
             </div>
             <div className='w-full mb-5 max-sm:px-2 flex items-center justify-center px-4 py-4  bg-gradient-to-r from-gray-100 to-gray-300 shadow-xl h-auto'>
+                <h1 className="text-xl font-bold text-red-400 uppercase">Sorry, Due to fast traffic, The app is Offline Now, Please check tomorrow</h1>
                 <section className='h-full text-center max-sm:px-2 px-20 py-5 bg-white bg-opacity-20 backdrop-blur-lg w-full'>
                     <h1 className='text-4xl max-sm:text-xl font-semibold text-slate-900'>Welcome to vBlog</h1>
                     <p className='text-sm m-3 text-slate-800 max-sm:hidden'>Welcome to vBlog, your premier knowledge-sharing platform where curiosity meets insight. Our mission is to foster a community where passionate individuals can come together to share and gain knowledge on a wide array of topics. Whether you’re looking to dive deep into the latest tech trends, explore the mysteries of the cosmos, or uncover the secrets of history, vBlog is your gateway to understanding the world around us.</p>
