@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { BlogContext } from "./app/Context/Context"
 import { useRouter } from "next/navigation"
 
-const Comment = ({ Comment, deleteComment }) => {
+const Comment = ({ comment, deleteComment }) => {
     const { users } = useContext(BlogContext)
     const [commentUser] = users.filter((user) => user?.userId === comment?.userId)
     const router = useRouter()
