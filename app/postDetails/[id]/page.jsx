@@ -295,7 +295,7 @@ const page = () => {
                                                    {
                                                         commentsPosts.map((commentt) => {
                                                             return (
-                                                                <Comment commentt={commentt} deleteComment={deleteComment} />
+                                                                <Comment currentUserId={currentUserId} commentt={commentt} deleteComment={deleteComment} />
                                                             )
                                                         })
                                                     }
