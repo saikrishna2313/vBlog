@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import { IoGameController } from "react-icons/io5";
 import noimage from '../../assets/noimage.png'
 import profileLogo from '../../assets/profileLogo.png'
+import comment from "@/comment";
 const page = () => {
     const router = useRouter()
 
